@@ -1,0 +1,355 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #000;
+  color: #eee;
+}
+
+header {
+  background: #111;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  flex-wrap: wrap;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.menu a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.menu a:hover {
+  color: #e50914;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  font-size: 28px;
+  color: #ffffff;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1px;
+}
+
+#buscador {
+  padding: 10px;
+  width: 280px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+}
+
+.header-right .btn-login {
+  background-color: #e50914;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.header-right .btn-login:hover {
+  background-color: #ff3333;
+}
+
+.banner {
+  position: relative;
+  height: 550px;
+  background-image: url('IMAGENES/BANNER THE LAST OF US.png');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.8);
+}
+
+.banner-info {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  color: white;
+  max-width: 500px;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  border-radius: 6px;
+}
+
+.banner-info h2 {
+  font-size: 42px;
+  margin: 0 0 10px;
+}
+
+.banner-info p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.btn-sinopsis {
+  background-color: #e50914;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s;
+  display: block;
+  margin-top: 20px;
+}
+
+.btn-sinopsis:hover {
+  background-color: #ff3333;
+}
+
+/* Estilos de la sinopsis y video */
+.sinopsis {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.trailer-container {
+  position: relative;
+  background-color: #000000;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+#trailerVideo {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+  border: none;
+  background-color: transparent;
+}
+
+.sinopsis .close-btn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: red;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.sinopsis .close-btn:hover {
+  background-color: #b20710;
+}
+
+/* Carrusel de películas */
+.swiper-container {
+  width: 100%;
+  height: 350px;
+  margin: 0 auto;
+}
+
+.swiper-wrapper {
+  display: flex;
+  gap: 5px;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5px;
+  text-align: center;
+}
+
+.swiper-slide img {
+  width: 70%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.titulo-pelicula {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Responsivo */
+@media screen and (min-width: 900px) {
+  .swiper-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .swiper-slide {
+    flex: 0 0 18%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .swiper-slide {
+    flex: 0 0 48%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .swiper-slide {
+    flex: 0 0 48%;
+  }
+}
+
+/* Flechas del carrusel */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fff !important;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  padding: 12px;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Paginación */
+.swiper-pagination-bullet {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #fff !important;
+}
+
+/* Cards de películas */
+.peliculas {
+  padding: 40px 30px;
+}
+
+.peliculas h2 {
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.card {
+  width: 200px;
+  text-align: center;
+  color: white;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.card img:hover {
+  transform: scale(1.05);
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.card p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* Botón Ver Todo */
+.btn-ver-todo {
+  display: none;
+  float: right;
+  margin-top: 10px;
+  margin-right: 20px;
+  background-color: #e50914;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-ver-todo:hover {
+  background-color: #b20710;
+  transform: scale(1.05);
+}
+
+.ver-todo-container {
+  display: none;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #000;
+  color: #999;
+}
+
+/* Menú desplegable */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #1c1c1c;
+  min-width: 180px;
+  z-index: 1;
+  border-radius: 6px;
+  padding: 10px 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: block;
+  font-size: 15px;
+}
+
+.dropdown-content a:hover {
+  background-color: #333;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
